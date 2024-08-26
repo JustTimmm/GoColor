@@ -18,7 +18,7 @@ func colorLog(colorMessage string, message string, useBackgroundColor bool, back
 		if len(args) > 0 {
 			fmt.Printf(colorMessage+message+color.Reset, args...)
 		} else {
-			fmt.Print(colorMessage + message + color.Reset)
+			fmt.Printf(colorMessage+message+color.Reset, args...)
 		}
 	}
 }
