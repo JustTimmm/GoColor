@@ -21,3 +21,23 @@ const (
 
 	Reset = "\x1b[0m"
 )
+
+const (
+	BackgroundBlack   = "\x1b[40m"
+	BackgroundRed     = "\x1b[41m"
+	BackgroundGreen   = "\x1b[42m"
+	BackgroundYellow  = "\x1b[43m"
+	BackgroundBlue    = "\x1b[44m"
+	BackgroundMagenta = "\x1b[45m"
+	BackgroundCyan    = "\x1b[46m"
+	BackgroundWhite   = "\x1b[47m"
+
+	BackgroundLightGray    = "\x1b[100m"
+	BackgroundLightRed     = "\x1b[101m"
+	BackgroundLightGreen   = "\x1b[102m"
+	BackgroundLightYellow  = "\x1b[103m"
+	BackgroundLightBlue    = "\x1b[104m"
+	BackgroundLightMagenta = "\x1b[105m"
+	BackgroundLightCyan    = "\x1b[106m"
+	BackgroundLightWhite   = "\x1b[107m"
+)
