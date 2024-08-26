@@ -1,4 +1,4 @@
-package color
+package GoColor
 
 const (
 	Black   = "\x1b[30m"
