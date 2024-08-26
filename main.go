@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GoColor/color"
 	"fmt"
+	"github.com/JustTimmm/GoColor/color"
 )
 
 func main() {}
