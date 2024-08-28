@@ -6,34 +6,36 @@ func colorLog(colorMessage string, message string, useBackgroundColor bool, back
 	if useBackgroundColor {
 		if len(args) > 0 {
 			fmt.Printf(backgroundColor+colorMessage+message+Reset, args...)
-		} else {
-			fmt.Printf(backgroundColor+colorMessage+message+Reset, args...)
+			return
 		}
-	} else {
-		if len(args) > 0 {
-			fmt.Printf(colorMessage+message+Reset, args...)
-		} else {
-			fmt.Printf(colorMessage+message+Reset, args...)
-		}
+		fmt.Printf(backgroundColor + colorMessage + message + Reset)
+		return
 	}
+
+	if len(args) > 0 {
+		fmt.Printf(colorMessage+message+Reset, args...)
+		return
+	}
+	fmt.Printf(colorMessage + message + Reset)
+	return
 }
 
-func errorLog(message string, args ...any) {
+func ErrorLog(message string, args ...interface{}) {
 	colorLog(LightRed, message, false, "", args...)
 }
 
-func successLog(message string, args ...any) {
+func SuccessLog(message string, args ...interface{}) {
 	colorLog(LightGreen, message, false, "", args...)
 }
 
-func infoLog(message string, args ...any) {
+func InfoLog(message string, args ...interface{}) {
 	colorLog(LightBlue, message, false, "", args...)
 }
 
-func debugLog(message string, args ...any) {
+func DebugLog(message string, args ...interface{}) {
 	colorLog(LightMagenta, message, false, "", args...)
 }
 
-func warnLog(message string, args ...any) {
+func WarnLog(message string, args ...interface{}) {
 	colorLog(LightYellow, message, false, "", args...)
 }
