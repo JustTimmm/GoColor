@@ -18,8 +18,6 @@ const (
 	LightMagenta = "\x1b[95m"
 	LightCyan    = "\x1b[96m"
 	LightWhite   = "\x1b[97m"
-
-	Reset = "\x1b[0m"
 )
 
 const (
@@ -41,3 +39,5 @@ const (
 	BackgroundLightCyan    = "\x1b[106m"
 	BackgroundLightWhite   = "\x1b[107m"
 )
+
+const Reset = "\x1b[0m"

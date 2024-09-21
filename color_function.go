@@ -2,40 +2,34 @@ package GoColor
 
 import "fmt"
 
-func ColorLog(colorMessage string, message string, useBackgroundColor bool, backgroundColor string, args ...any) {
-	if useBackgroundColor {
-		if len(args) > 0 {
-			fmt.Printf(backgroundColor+colorMessage+message+Reset, args...)
-			return
-		}
-		fmt.Printf(backgroundColor + colorMessage + message + Reset)
-		return
-	}
+type ColorOption struct {
+	TextColor       string
+	BackgroundColor string
+}
 
-	if len(args) > 0 {
-		fmt.Printf(colorMessage+message+Reset, args...)
-		return
-	}
-	fmt.Printf(colorMessage + message + Reset)
-	return
+func ColorLog(option ColorOption, message string, args ...any) {
+	format := option.BackgroundColor + option.TextColor
+	msg := fmt.Sprintf(format+message+Reset, args...)
+
+	fmt.Printf(msg + Reset)
 }
 
 func ErrorLog(message string, args ...interface{}) {
-	ColorLog(LightRed, message, false, "", args...)
+	ColorLog(ColorOption{TextColor: LightRed}, message, args...)
 }
 
 func SuccessLog(message string, args ...interface{}) {
-	ColorLog(LightGreen, message, false, "", args...)
+	ColorLog(ColorOption{TextColor: LightGreen}, message, args...)
 }
 
 func InfoLog(message string, args ...interface{}) {
-	ColorLog(LightBlue, message, false, "", args...)
+	ColorLog(ColorOption{TextColor: LightBlue}, message, args...)
 }
 
 func DebugLog(message string, args ...interface{}) {
-	ColorLog(LightMagenta, message, false, "", args...)
+	ColorLog(ColorOption{TextColor: LightMagenta}, message, args...)
 }
 
 func WarnLog(message string, args ...interface{}) {
-	ColorLog(LightYellow, message, false, "", args...)
+	ColorLog(ColorOption{TextColor: LightYellow}, message, args...)
 }
