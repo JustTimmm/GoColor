@@ -1,6 +1,9 @@
 package GoColor
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type ColorOption struct {
 	TextColor       string
@@ -8,10 +11,15 @@ type ColorOption struct {
 }
 
 func ColorLog(option ColorOption, message string, args ...any) {
-	format := option.BackgroundColor + option.TextColor
-	msg := fmt.Sprintf(format+message, args...)
-
-	fmt.Printf(msg + Reset)
+	formatted := fmt.Sprintf(message, args...)
+	lines := strings.Split(formatted, "\n")
+	for i, line := range lines {
+		if i < len(lines)-1 {
+			fmt.Print(option.BackgroundColor + option.TextColor + line + Reset + "\n")
+		} else {
+			fmt.Print(option.BackgroundColor + option.TextColor + line + Reset)
+		}
+	}
 }
 
 func ErrorLog(message string, args ...interface{}) {
