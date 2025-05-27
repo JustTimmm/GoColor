@@ -9,7 +9,7 @@ type ColorOption struct {
 
 func ColorLog(option ColorOption, message string, args ...any) {
 	format := option.BackgroundColor + option.TextColor
-	msg := fmt.Sprintf(format+message+Reset, args...)
+	msg := fmt.Sprintf(format+message, args...)
 
 	fmt.Printf(msg + Reset)
 }
