@@ -2,7 +2,6 @@ package GoColor
 
 const Reset = "\x1b[0m"
 
-// Text Colors
 const (
 	Black   = "\x1b[30m"
 	Red     = "\x1b[31m"
@@ -23,7 +22,6 @@ const (
 	LightWhite   = "\x1b[97m"
 )
 
-// Background Color
 const (
 	BackgroundBlack   = "\x1b[40m"
 	BackgroundRed     = "\x1b[41m"

@@ -41,3 +41,15 @@ func DebugLog(message string, args ...interface{}) {
 func WarnLog(message string, args ...interface{}) {
 	ColorLog(ColorOption{TextColor: LightYellow}, message, args...)
 }
+
+func RainbowLog(message string, args ...interface{}) {
+	colors := []string{Red, Yellow, Green, Cyan, Blue, Magenta}
+	colorCount := len(colors)
+
+	formatted := fmt.Sprintf(message, args...)
+
+	for i, char := range formatted {
+		color := colors[i%colorCount]
+		fmt.Print(color + string(char) + Reset)
+	}
+}
