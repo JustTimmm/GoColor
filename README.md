@@ -47,8 +47,11 @@ GoColor.SuccessLog("Success log!\n")
 GoColor.InfoLog("Info log!\n")
 GoColor.DebugLog("Debug log!\n")
 GoColor.WarnLog("Warn log!\n")
+GoColor.RainbowLog("Rainbow Log!\n")
 ```
 <img src="doc/img.png">
+<br>
+<img src="doc/img_4.png">
 
 ## License
 
