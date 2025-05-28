@@ -43,7 +43,7 @@ func WarnLog(message string, args ...interface{}) {
 }
 
 func RainbowLog(message string, args ...interface{}) {
-	colors := []string{Red, Yellow, Green, Cyan, Blue, Magenta}
+	colors := []string{LightRed, LightYellow, LightGreen, LightCyan, LightBlue, LightMagenta}
 	colorCount := len(colors)
 
 	formatted := fmt.Sprintf(message, args...)
